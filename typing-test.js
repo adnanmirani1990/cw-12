@@ -30,7 +30,8 @@ function initializeTest({ timeLimit, text }) {
   text.split('').forEach(item => {
   html += `<div id="type-text">
             <span>${item}</span>
-            </div>`
+            </div>
+            <div><p>salam</p></div>`
   })
   // typeText.innerHTML= html;
 }
