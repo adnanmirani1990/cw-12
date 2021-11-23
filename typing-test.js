@@ -43,7 +43,8 @@ function updateCharactersStatus() {
 }
 
 function updateAccuracy() {
-  // TODO: Complete this function
+  accuracy = (typedCharacter-errors)*100/typedCharacter;
+  return accuracy 
 }
 
 function updateErrors() {
