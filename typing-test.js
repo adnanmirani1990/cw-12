@@ -24,7 +24,15 @@ initializeTest({ timeLimit: TIME_LIMIT, text: TEXT });
 textArea.addEventListener("input", update);
 
 function initializeTest({ timeLimit, text }) {
-  const aval = document.getElementById('aaaa');
+  timerText.innerHTML = timeLimit;
+  // console.log(text.split(''));
+  let html = ``;
+  text.split('').forEach(item => {
+  html += `<div id="type-text">
+            <span>${item}</span>
+            </div>`
+  })
+  // typeText.innerHTML= html;
 }
 
 function update() {
@@ -39,7 +47,8 @@ function update() {
 }
 
 function updateCharactersStatus() {
-  // TODO: Complete this function
+  initializeTest({timeLimit, text});
+
 }
 
 function updateAccuracy() {
