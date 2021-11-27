@@ -39,7 +39,7 @@ function update() {
 }
 
 function updateCharactersStatus() {
-  // TODO: Complete this function
+  
 }
 
 function updateAccuracy() {
