@@ -26,14 +26,11 @@ textArea.addEventListener("input", update);
 function initializeTest({ timeLimit, text }) {
   timerText.innerHTML = timeLimit;
   // console.log(text.split(''));
-  let html = ``;
   text.split('').forEach(item => {
-  html += `<div id="type-text">
-            <span>${item}</span>
-            </div>
-            <div><p>salam</p></div>`
+    const char = document.createElement('span')
+    char.innerText = item
+    typeText.appendChild(char);
   })
-  // typeText.innerHTML= html;
 }
 
 function update() {
