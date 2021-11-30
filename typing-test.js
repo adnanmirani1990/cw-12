@@ -67,4 +67,11 @@ function updateTimer() {
 
 function finishTest() {
   // TODO: Complete this function
+  clearInterval(timer);
+ 
+  // // disable the input area
+  textArea.disabled = true;
+
+
+
 }
