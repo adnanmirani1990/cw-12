@@ -80,7 +80,7 @@ function updateAccuracy() {
 }
 
 function updateErrors() {
-  errorText.textContent = errors;
+  // TODO: Complete this function
 }
 
 function updateWpm() {
