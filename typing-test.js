@@ -11,7 +11,7 @@ let typeText = document.getElementById("type-text");
 
 let textArea = document.getElementById("textarea");
 
-let timeLeft = 0;
+let timeLeft = TIME_LIMIT;
 let timeElapsed = 0;
 let errors = 0;
 let accuracy = 0;
@@ -39,16 +39,48 @@ function update() {
 }
 
 function updateCharactersStatus() {
-  // TODO: Complete this function
+  let text = TEXT;
+  let timeLimit= TIME_LIMIT
+  errors = 0;
+  textArea_array = textArea.value.split('')
+  console.log(textArea_array);
+  quoteSpanArray = typeText.querySelectorAll('span');
+  quoteSpanArray.forEach((char, index) => {
+    let typedChar = textArea_array[index]
+ 
+    // character not currently typed
+    if (typedChar == null) {
+      char.classList.remove('correct_char');
+      char.classList.remove('incorrect_char');
+ 
+      // correct character
+    } else if (typedChar === char.innerText) {
+      char.classList.add('correct_char');
+      char.classList.remove('incorrect_char');
+ 
+      // incorrect character
+    } else {
+      char.classList.add('incorrect_char');
+      char.classList.remove('correct_char');
+ 
+      // increment number of errors
+      errors++;
+    }
+
+    if (textArea.value.length == text.length) {
+      // clear the input area
+      textArea.value = "";
+    }
+  });
 }
 
 function updateAccuracy() {
   accuracy = (typedCharacter-errors)*100/typedCharacter;
-  return accuracy 
+  accuracyText.textContent = Math.round(accuracy)
 }
 
 function updateErrors() {
-  // TODO: Complete this function
+  errorText.textContent = errors;
 }
 
 function updateWpm() {
